@@ -14,4 +14,4 @@ YouTube link: https://www.youtube.com/watch?v=0sOvCWFmrtA
 Documentation:  https://youtu.be/0sOvCWFmrtA?t=8281
 SQLAlchemy: https://youtu.be/0sOvCWFmrtA?t=16536 
 
-Current position: https://youtu.be/0sOvCWFmrtA?t=26040
+Current position: https://youtu.be/0sOvCWFmrtA?t=27378

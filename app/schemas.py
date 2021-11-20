@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Optional
 
 from sqlalchemy.log import class_logger
 
@@ -47,6 +48,12 @@ class UserOut(UserBase):    # Remove password field from response
 # auth
 #
 
-class UserLogin(UserCreate):
+class UserLogin(UserCreate):    # email + password
     pass
 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id : Optional[str]
