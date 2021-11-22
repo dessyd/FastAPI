@@ -1,17 +1,17 @@
 # FastAPI
 
-## Training References:
+### Training References:
 
 - YouTube link: https://www.youtube.com/watch?v=0sOvCWFmrtA
 - Repo: https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git
 
-## Packages Used
+### Packages Used
 
 - FastAPI doc: https://fastapi.tiangolo.com/tutorial/ and: https://fastapi.tiangolo.com/tutorial/sql-databases/
 - SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
 - JWT Decoder: [https://jwt.io](https://jwt.io/)
 
-## Local Setup
+### Local Setup
 
 ```
 # Create virtual environment
