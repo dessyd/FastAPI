@@ -9,4 +9,3 @@ pydantic
 pydantic[email]
 python-jose
 passlib
-
