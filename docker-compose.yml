@@ -5,8 +5,10 @@ services:
   db:
     image: postgres:latest
     restart: always
+    env_file:
+      - postgres.env
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_DB : ${POSTGRES_DB:-fastapi}
     ports:
       - 5432:5432
     volumes:
