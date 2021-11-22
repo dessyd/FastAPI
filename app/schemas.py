@@ -4,29 +4,8 @@ from typing import Optional
 
 from sqlalchemy.log import class_logger
 
-#
-# posts
-#
+from app.models import User
 
-
-class PostBase(BaseModel):
-    title: str
-    content: str
-    published: bool = True
-
-class PostCreate(PostBase):
-    pass
-
-class PostUpdate(PostBase):
-    pass
-
-class Post(PostBase):
-    id: int
-    created_at: datetime
-    owner_id: int
-
-    class Config:
-        orm_mode = True
 
 #
 # users
@@ -44,6 +23,31 @@ class UserOut(UserBase):    # Remove password field from response
 
     class Config:
         orm_mode = True
+
+#
+# posts
+#
+
+class PostBase(BaseModel):
+    title: str
+    content: str
+    published: bool = True
+
+class PostCreate(PostBase):
+    pass
+
+class PostUpdate(PostBase):
+    pass
+
+class Post(PostBase):
+    id: int
+    created_at: datetime
+    owner_id: int
+    owner: UserOut
+
+    class Config:
+        orm_mode = True
+
 
 #
 # auth
