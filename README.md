@@ -1,7 +1,6 @@
 # FastAPI
 
 FastAPI doc: https://fastapi.tiangolo.com/tutorial/
-
 and: https://fastapi.tiangolo.com/tutorial/sql-databases/ 
 
 SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
