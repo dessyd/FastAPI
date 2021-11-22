@@ -1,0 +1,12 @@
+datetime
+typing
+fastapi[all]
+uvicorn 
+bcrypt 
+psycopg2 
+sqlalchemy 
+pydantic
+pydantic[email]
+python-jose
+passlib
+
