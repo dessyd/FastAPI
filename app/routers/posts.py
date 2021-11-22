@@ -1,4 +1,6 @@
 from typing import List
+
+from starlette.status import HTTP_403_FORBIDDEN
 from .. import models, schemas, oauth2
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
@@ -29,8 +31,7 @@ def get_post(id: int, db: Session = Depends(get_db), current_user: int = Depends
 def create_post(post: schemas.PostCreate, db: Session = Depends(get_db), 
                 current_user: int = Depends(oauth2.get_current_user)):
 
-    print(current_user.email)
-    new_post = models.Post(**post.dict())
+    new_post = models.Post(owner_id=current_user.id, **post.dict())
     db.add(new_post)
     db.commit()
     db.refresh(new_post)
@@ -42,10 +43,15 @@ def delete_post(id: int, db: Session = Depends(get_db),
                 current_user: int = Depends(oauth2.get_current_user)):
 
     post = db.query(models.Post).filter(models.Post.id == id)
+    first_post = post.first()
 
-    if post.first() == None:
+    if first_post == None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Post with id: {id} does not exeist")      
+                            detail=f"Post with id: {id} does not exeist")
+
+    if first_post.owner_id != current_user.id:
+        raise HTTPException(status_code=HTTP_403_FORBIDDEN, detail="Not aithorized to perform requested action")
+
     post.delete(synchronize_session=False)
     db.commit()
 
@@ -61,6 +67,9 @@ def update_post(id: int, post: schemas.PostUpdate, db: Session = Depends(get_db)
     if first_post == None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"Post with id: {id} does not exeist")
+    if first_post.owner_id != current_user.id:
+        raise HTTPException(status_code=HTTP_403_FORBIDDEN, detail="Not aithorized to perform requested action")
+
     post_query.update(post.dict(), synchronize_session=False)
     db.commit()
 
