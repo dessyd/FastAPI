@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from starlette.status import HTTP_403_FORBIDDEN
 from .. import models, schemas, oauth2
@@ -12,13 +12,15 @@ router = APIRouter(
 )
 
 @router.get("/", response_model=List[schemas.Post])
-def get_posts(db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):
+def get_posts(db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user),
+limit: int = 10, skip: int = 0, search: Optional[str] = ""):
 
-    posts = db.query(models.Post).all()
+    posts = db.query(models.Post).filter(models.Post.title.contains(search)).limit(limit).offset(skip).all()
     return posts
 
 @router.get("/{id}", response_model=schemas.Post)
 def get_post(id: int, db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):
+
 
     post = db.query(models.Post).filter(models.Post.id == id).first()
 
