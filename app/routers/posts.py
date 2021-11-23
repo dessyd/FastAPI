@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from starlette.status import HTTP_403_FORBIDDEN
 from .. import models, schemas, oauth2
-from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
+from fastapi import  Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
 from ..database import get_db
 
