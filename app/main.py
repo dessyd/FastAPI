@@ -1,15 +1,6 @@
-from typing import Optional, List
-from fastapi import FastAPI, Response, status, HTTPException, Depends
-from fastapi.params import Body
-from pydantic import BaseModel
-
-import psycopg2
-from psycopg2.extras import RealDictCursor, execute_batch
-import time
-from sqlalchemy.orm import Session, query
-from sqlalchemy.sql.functions import mode
-from . import models, schemas, utils
-from .database import engine, get_db
+from fastapi import FastAPI
+from . import models
+from .database import engine
 from .routers import posts, users, auth
 
 
