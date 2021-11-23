@@ -1,11 +1,11 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import Optional
+from pydantic.types import conint
 
 from sqlalchemy.log import class_logger
 
 from app.models import User
-
 
 #
 # users
@@ -48,7 +48,6 @@ class Post(PostBase):
     class Config:
         orm_mode = True
 
-
 #
 # auth
 #
@@ -62,3 +61,12 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id : Optional[str]
+
+
+#
+# votes
+#
+
+class Vote(BaseModel):
+    post_id: int
+    dir: conint(le=1)    # Contraint to an integer of max 1

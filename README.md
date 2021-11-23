@@ -10,6 +10,7 @@
 - FastAPI doc: https://fastapi.tiangolo.com/tutorial/ and: https://fastapi.tiangolo.com/tutorial/sql-databases/
 - SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
 - JWT Decoder: [https://jwt.io](https://jwt.io/)
+- Postgres Tutorial : [https://www.postgresqltutorial.com/install-postgresql-linux/] https://www.postgresqltutorial.com/install-postgresql-linux/
 
 ### Local Setup
 
