@@ -38,6 +38,16 @@ alembic revision --autogenerate -m "Application schema"
 alembic upgrade head
 # Start Web server: 
 uvicorn app.main:app --reload
+```
 
+## Heroku setup
 
 ```
+# heroku login via cli 
+# Email: your email
+# Password: heroku generated token
+heroku login -i
+# Create app with global name. Only do this once
+heroku apps:create fastapi-dessyd
+
+
