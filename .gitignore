@@ -139,3 +139,7 @@ cython_debug/
 
 # My own stuff
 tracking.txt
+
+# alembic
+alembic/versions/
+alembic/script.py.mako
