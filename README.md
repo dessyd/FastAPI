@@ -13,8 +13,7 @@
 - Postgres Tutorial : https://www.postgresqltutorial.com/install-postgresql-linux/
 - SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
 - Alembic: https://alembic.sqlalchemy.org/en/latest/tutorial.html
-
-
+- Heroku: https://devcenter.heroku.com/articles/getting-started-with-python
 
 ### Local Setup
 
