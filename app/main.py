@@ -5,7 +5,8 @@ from .routers import posts, users, auth, votes
 from .config import settings
 
 
-models.Base.metadata.create_all(bind=engine)
+# Needed if Alembic is not used to create / upgrade the structure
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
