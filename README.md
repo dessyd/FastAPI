@@ -27,6 +27,14 @@ source venv/bin/activate
 pip install --upgrade pip
 # install project's requirements
 pip install -r requirements.txt
+# start database engine
+docker compose up -d
+# Initialize alembic file structure
+alembic init alemebic
+# copy the project ini file
+cp app/alembic.env.py alembic/env.py
+# Autogenerate the database schema
+alembic revision --autogenerate -m "Application schema"
 # Start Web server: 
 uvicorn app.main:app --reload
 
