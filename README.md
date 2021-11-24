@@ -8,6 +8,7 @@
 ### Packages Used
 
 - FastAPI doc: https://fastapi.tiangolo.com/tutorial/ and: https://fastapi.tiangolo.com/tutorial/sql-databases/
+- CORS: https://fastapi.tiangolo.com/tutorial/cors/ 
 - JWT Decoder: https://jwt.io/
 - Postgres Tutorial : https://www.postgresqltutorial.com/install-postgresql-linux/
 - SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
