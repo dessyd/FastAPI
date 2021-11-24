@@ -141,5 +141,5 @@ cython_debug/
 tracking.txt
 
 # alembic
-alembic/versions/
-alembic/script.py.mako
+alembic/
+
