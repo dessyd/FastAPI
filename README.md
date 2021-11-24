@@ -49,5 +49,10 @@ uvicorn app.main:app --reload
 heroku login -i
 # Create app with global name. Only do this once
 heroku apps:create fastapi-dessyd
+# push content to herou
+git push heroku main
+# Access the app
+# go to https://fastapi-dessyd.herokuapp.com/
+
 
 
