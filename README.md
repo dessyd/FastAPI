@@ -54,5 +54,9 @@ git push heroku main
 # Access the app
 # go to https://fastapi-dessyd.herokuapp.com/
 
+# Add postgres
+heroku addons:create heroku-postgresql:hobby-dev
+
+
 
 
