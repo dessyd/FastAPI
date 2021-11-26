@@ -57,6 +57,13 @@ git push heroku main
 # Add postgres
 heroku addons:create heroku-postgresql:hobby-dev
 
+## Ubuntu
+Set environment from .env syntax ( no export)
+```
+set -o allexport; source ~/.env ; set +o allexport
+````
+
+
 
 
 
