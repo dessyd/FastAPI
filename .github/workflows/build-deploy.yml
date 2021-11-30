@@ -1,21 +1,21 @@
-# name: Build and Deploy code
+name: Build and Deploy code
 
-# on: [push, pull_request]
+on: [push, pull_request]
 
-# jobs:
-#   job1:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: pulling git repo
-#         uses: actions/checkout@v2
-#       - name: Inistall python 3.9
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: 3.9
-#       - name: update pip
-#         run: python -m pip install --upgrade pip
-#       - name: Install requirements
-#         run: pip install -r requirements.txt
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling git repo
+        uses: actions/checkout@v2
+      - name: Inistall python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: update pip
+        run: python -m pip install --upgrade pip
+      - name: Install requirements
+        run: pip install -r requirements.txt
 
 
 
