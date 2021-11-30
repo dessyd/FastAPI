@@ -1,21 +1,34 @@
-name: Build and Deploy code
+name: CI to Docker Hub
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  job1:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: pulling git repo
+      - name: Check Out Repo 
         uses: actions/checkout@v2
-      - name: Inistall python 3.9
-        uses: actions/setup-python@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
         with:
-          python-version: 3.9
-      - name: update pip
-        run: python -m pip install --upgrade pip
-      - name: Install requirements
-        run: pip install -r requirements.txt
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
 
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
 
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
