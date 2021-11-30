@@ -57,6 +57,23 @@ git push heroku main
 # Add postgres
 heroku addons:create heroku-postgresql:hobby-dev
 ```
+## Environment variables
+All environment variables are stored in a `.env` file having the following structure:
+````
+# DB section
+DATABASE_DRIVER=postgresql
+DATABASE_HOSTNAME=<target host>
+DATABASE_PORT=<actual port>
+DATABASE_NAME=<DB name>
+
+DATABASE_USERNAME=<db user>
+DATABASE_PASSWORD=<db password
+
+# oauth section
+SECRET_KEY=<oauth session secret key>
+ALGORITHM=<oauth session algo>
+ACCESS_TOKEN_EXPIRE_MINUTES=<token expiration delay>
+```
 
 ## Ubuntu
 Set environment from .env syntax ( no export)
