@@ -59,7 +59,7 @@ heroku addons:create heroku-postgresql:hobby-dev
 ```
 ## Environment variables
 All environment variables are stored in a `.env` file having the following structure:
-````
+```
 # DB section
 DATABASE_DRIVER=postgresql
 DATABASE_HOSTNAME=<target host>
@@ -79,7 +79,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=<token expiration delay>
 Set environment from .env syntax ( no export)
 ```
 set -o allexport; source ~/.env ; set +o allexport
-````
+```
 
 
 
