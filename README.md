@@ -63,16 +63,18 @@ All environment variables are stored in a `.env` file having the following struc
 # DB section
 DATABASE_DRIVER=postgresql
 DATABASE_HOSTNAME=<target host>
-DATABASE_PORT=<actual port>
+DATABASE_PORT=5432
 DATABASE_NAME=<DB name>
 
 DATABASE_USERNAME=<db user>
 DATABASE_PASSWORD=<db password
 
 # oauth section
+# to get a SECRET_KEY string run:
+# openssl rand -hex 32
 SECRET_KEY=<oauth session secret key>
-ALGORITHM=<oauth session algo>
-ACCESS_TOKEN_EXPIRE_MINUTES=<token expiration delay>
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```
 
 ## Ubuntu
