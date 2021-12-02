@@ -11,9 +11,6 @@ from .config import settings
 
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="login")  # login route name found in oauth.py
 
-# to get a string like this run:
-# openssl rand -hex 32
-
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
