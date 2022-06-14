@@ -1,11 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import models
-from .database import engine
-from .routers import posts, users, auth, votes
-from .config import settings
-
+from .routers import auth, posts, users, votes
 
 # Needed if Alembic is not used to create / upgrade the structure
 # models.Base.metadata.create_all(bind=engine)
@@ -16,7 +12,7 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "http://localhost:8000"
+    "http://localhost:8000",
 ]
 
 app = FastAPI()
@@ -34,7 +30,7 @@ app.include_router(users.router)
 app.include_router(auth.router)
 app.include_router(votes.router)
 
+
 @app.get("/")
 def root():
     return {"message": "Hello Root"}
-

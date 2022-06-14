@@ -1,23 +1,25 @@
 # FastAPI
 
-### Training References:
+## FastAPI details
 
-- YouTube link: https://www.youtube.com/watch?v=0sOvCWFmrtA
-- Repo: https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git
+### Training References
+
+- YouTube link: <https://www.youtube.com/watch?v=0sOvCWFmrtA>
+- Repo: <https://github.com/Sanjeev-Thiyagarajan/fastapi-course.git>
 
 ### Packages Used
 
-- FastAPI doc: https://fastapi.tiangolo.com/tutorial/ and: https://fastapi.tiangolo.com/tutorial/sql-databases/
-- CORS: https://fastapi.tiangolo.com/tutorial/cors/ 
-- JWT Decoder: https://jwt.io/
-- Postgres Tutorial : https://www.postgresqltutorial.com/install-postgresql-linux/
-- SQLAlchemy doc: https://docs.sqlalchemy.org/en/14/
-- Alembic: https://alembic.sqlalchemy.org/en/latest/tutorial.html
-- Heroku: https://devcenter.heroku.com/articles/getting-started-with-python
+- FastAPI doc: <https://fastapi.tiangolo.com/tutorial/> and: <https://fastapi.tiangolo.com/tutorial/sql-databases/>
+- CORS: <https://fastapi.tiangolo.com/tutorial/cors/>
+- JWT Decoder: <https://jwt.io/>
+- Postgres Tutorial : <https://www.postgresqltutorial.com/install-postgresql-linux/>
+- SQLAlchemy doc: <https://docs.sqlalchemy.org/en/14/>
+- Alembic: <https://alembic.sqlalchemy.org/en/latest/tutorial.html>
+- Heroku: <https://devcenter.heroku.com/articles/getting-started-with-python>
 
 ### Local Setup
 
-```
+```bash
 # Create virtual environment
 python3 -m venv venv
 # Activate it
@@ -26,6 +28,8 @@ source venv/bin/activate
 pip install --upgrade pip
 # install project's requirements
 pip install -r requirements.txt
+# Install pre-commit checks
+pre-commit install
 # start database engine
 docker compose up -d
 # Initialize alembic file structure
@@ -36,14 +40,14 @@ cp app/alembic.env.py alembic/env.py
 alembic revision --autogenerate -m "Application schema"
 # Execute the schema creation
 alembic upgrade head
-# Start Web server: 
+# Start Web server:
 uvicorn app.main:app --reload
 ```
 
 ## Heroku setup
 
-```
-# heroku login via cli 
+```bash
+# heroku login via cli
 # Email: your email
 # Password: heroku generated token
 heroku login -i
@@ -57,9 +61,12 @@ git push heroku main
 # Add postgres
 heroku addons:create heroku-postgresql:hobby-dev
 ```
+
 ## Environment variables
+
 All environment variables are stored in a `.env` file having the following structure:
-```
+
+```bash
 # DB section
 DATABASE_DRIVER=postgresql
 DATABASE_HOSTNAME=<target host>
@@ -78,12 +85,9 @@ ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```
 
 ## Ubuntu
+
 Set environment from .env syntax ( no export)
-```
+
+```bash
 set -o allexport; source ~/.env ; set +o allexport
 ```
-
-
-
-
-

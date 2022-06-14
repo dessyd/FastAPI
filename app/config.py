@@ -1,5 +1,6 @@
 from pydantic import BaseSettings
 
+
 class Settings(BaseSettings):
     database_driver: str = "postgresql"
     database_hostname: str = "localhost"
@@ -16,7 +17,5 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
+
 settings = Settings()
-
-
-    
