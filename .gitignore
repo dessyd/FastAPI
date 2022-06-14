@@ -137,10 +137,12 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# MacOS
+.DS_Store
+
 # My own stuff
 tracking.txt
 
 # alembic
 # alembic.ini
 # alembic/
-
