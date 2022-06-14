@@ -28,8 +28,6 @@ source venv/bin/activate
 pip install --upgrade pip
 # install project's requirements
 pip install -r requirements.txt
-# Install pre-commit checks
-pre-commit install
 # start database engine
 docker compose up -d
 # Initialize alembic file structure
