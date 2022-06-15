@@ -1,8 +1,8 @@
 """Application schema
 
-Revision ID: cd06f62b2db2
+Revision ID: ab851178582d
 Revises:
-Create Date: 2021-11-25 08:40:32.202970
+Create Date: 2022-06-15 09:04:43.303455
 
 """
 import sqlalchemy as sa
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision = "cd06f62b2db2"
+revision = "ab851178582d"
 down_revision = None
 branch_labels = None
 depends_on = None
