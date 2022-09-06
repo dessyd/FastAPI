@@ -16,12 +16,13 @@ repos:
     -   id: check-merge-conflict
     -   id: check-case-conflict
     -   id: check-docstring-first
+    -   id: check-yaml
 
 -   repo: https://github.com/psf/black
     rev: 22.3.0
     hooks:
     - id: black
-      language_version: python3.9
+      language_version: python3.10
       args:
         - --line-length=100
 -   repo: https://gitlab.com/pycqa/flake8
