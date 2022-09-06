@@ -100,4 +100,6 @@ In oder to generate the OpenAPI description file `openapi.json`issue the followi
 
 ```bash
 wget http://localhost:8000/openapi.json
+# Optional add it to the repo
+git add openapi.json
 ```
