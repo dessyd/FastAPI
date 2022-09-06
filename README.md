@@ -93,3 +93,11 @@ Set environment from .env syntax ( no export)
 ```bash
 set -o allexport; source ~/.env ; set +o allexport
 ```
+
+## OpenAPI
+
+In oder to generate the OpenAPI description file `openapi.json`issue the following:
+
+```bash
+wget http://localhost:8000/openapi.json
+```
