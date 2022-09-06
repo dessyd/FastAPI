@@ -49,3 +49,7 @@ repos:
         - --in-place
         - --remove-unused-variables
         - --remove-all-unused-imports
+- repo: https://github.com/dudefellah/pre-commit-openapi
+  rev: "v0.0.1"
+  hooks:
+    - id: check-openapi
