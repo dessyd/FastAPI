@@ -143,6 +143,6 @@ cython_debug/
 # My own stuff
 tracking.txt
 
-# alembic
-# alembic.ini
-# alembic/
+alembic
+alembic.ini
+alembic/

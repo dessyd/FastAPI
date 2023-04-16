@@ -21,9 +21,9 @@
 
 ```bash
 # Create virtual environment
-python3 -m venv venv
+python3 -m venv .venv
 # Activate it
-source venv/bin/activate
+source .venv/bin/activate
 # make sure pip is up to date
 pip install --upgrade pip
 # install project's requirements

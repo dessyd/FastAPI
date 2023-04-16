@@ -20,7 +20,6 @@ def get_posts(
     skip: int = 0,
     search: Optional[str] = "",
 ):
-
     posts = (
         db.query(models.Post, func.count(models.Vote.post_id).label("votes"))
         .join(models.Vote, models.Vote.post_id == models.Post.id, isouter=True)
@@ -39,7 +38,6 @@ def get_posts(
 def get_post(
     id: int, db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)
 ):
-
     # post = db.query(models.Post).filter(models.Post.id == id).first()
 
     post = (
@@ -63,7 +61,6 @@ def create_post(
     db: Session = Depends(get_db),
     current_user: int = Depends(oauth2.get_current_user),
 ):
-
     new_post = models.Post(owner_id=current_user.id, **post.dict())
     db.add(new_post)
     db.commit()
@@ -76,7 +73,6 @@ def create_post(
 def delete_post(
     id: int, db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)
 ):
-
     post = db.query(models.Post).filter(models.Post.id == id)
     first_post = post.first()
 
@@ -103,7 +99,6 @@ def update_post(
     db: Session = Depends(get_db),
     current_user: int = Depends(oauth2.get_current_user),
 ):
-
     post_query = db.query(models.Post).filter(models.Post.id == id)
     first_post = post_query.first()
 
